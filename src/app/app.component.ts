@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Import CommonModule for router-outlet
+import { RouterOutlet } from '@angular/router'; // Import RouterOutlet
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet] // Add RouterOutlet here
 })
 export class AppComponent {
   title = 'bill-splitter';

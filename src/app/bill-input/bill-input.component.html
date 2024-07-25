@@ -1,0 +1,29 @@
+<form (ngSubmit)="submitBill()">
+    <div>
+      <h3>Bill Items</h3>
+      <div *ngFor="let item of billItems; let i = index">
+        <label for="name{{i}}">Item Name:</label>
+        <input id="name{{i}}" [(ngModel)]="item.name" name="name{{i}}" required />
+  
+        <label for="quantity{{i}}">Quantity:</label>
+        <input id="quantity{{i}}" [(ngModel)]="item.quantity" name="quantity{{i}}" type="number" required />
+  
+        <label for="price{{i}}">Price:</label>
+        <input id="price{{i}}" [(ngModel)]="item.price" name="price{{i}}" type="number" required />
+  
+        <label for="category{{i}}">Category:</label>
+        <select id="category{{i}}" [(ngModel)]="item.category" name="category{{i}}" required>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Non-Drinks">Non-Drinks</option>
+        </select>
+
+        <label for="amount{{i}}">Amount:</label>
+        <input id="amount{{i}}" [(ngModel)]="item.amount" name="amount{{i}}" type="number" required />
+      </div>
+      <button type="button" (click)="addItem()">Add Item</button>
+    </div>
+    <button type="submit">Submit Bill</button>
+  </form>
+  
